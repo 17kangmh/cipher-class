@@ -1,10 +1,3 @@
-# File: Project3.py
-# Student: Minhyuk Kang 
-# UT EID:mk44496
-# Course Name: CS303E
-# 
-# Date:11/29
-# Description of Program: This program implements a substitution cipher class.
 
 import random
 import os
@@ -12,17 +5,12 @@ import os
 # A global constant defining the alphabet. 
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
 
-# You are welcome to use the following two auxiliary functions, or 
-# define your own.   They use some constructs we haven't covered. 
 
 def isLegalKey( key ):
-    # A key is legal if it has length 26 and contains all letters.
-    # from LETTERS.
     key = key.lower()
     return ( len(key) == 26 and all( [ ch in key for ch in LETTERS ] ) )
 
 def makeRandomKey():
-    # A legal random key is a permutation of LETTERS.
     lst = list( LETTERS )    # Turn string into list of letters
     random.shuffle( lst )    # Shuffle the list randomly
     return ''.join( lst )    # Assemble them back into a string
@@ -33,8 +21,6 @@ class SubstitutionCipher:
         """Create an instance of the cipher with stored key, which
         defaults to a randomly generated key."""
 
-    # Note that these are the required methods, but you may define
-    # additional methods if you need them.  (I didn't need any.)
 
     def getKey( self ):
         return self.__key
